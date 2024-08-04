@@ -1,0 +1,72 @@
+!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NopainApp - Personalización de Rutinas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NopainApp</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Inicio</a></li>
+                <li><a href="#" onclick="showSection('routine')">Rutina</a></li>
+                <li><a href="#" onclick="showSection('help')">Ayuda</a></li>
+            </ul>
+        </nav>
+        <div id="home" class="section">
+            <h2>Personalización de Rutinas</h2>
+            <div class="form-group">
+                <label for="difficulty">Nivel de Dificultad:</label>
+                <select id="difficulty">
+                    <option value="beginner">Principiante</option>
+                    <option value="intermediate">Intermedio</option>
+                    <option value="advanced">Avanzado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duración:</label>
+                <select id="duration">
+                    <option value="15">15 minutos</option>
+                    <option value="30">30 minutos</option>
+                    <option value="45">45 minutos</option>
+                    <option value="60">60 minutos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="type">Tipo de Ejercicio:</label>
+                <select id="type">
+                    <option value="cardio">Cardio</option>
+                    <option value="strength">Fuerza</option>
+                    <option value="flexibility">Flexibilidad</option>
+                    <option value="balance">Equilibrio</option>
+                </select>
+            </div>
+            <button onclick="generateRoutine()">Generar Rutina</button>
+        </div>
+        <div id="routine" class="section" style="display:none;">
+            <h2>Tu Rutina</h2>
+            <div id="routineDetails"></div>
+            <div id="timer">
+                <p>Tiempo restante: <span id="time">00:00</span></p>
+                <button onclick="startRoutine()">Iniciar Rutina</button>
+            </div>
+        </div>
+        <div id="help" class="section" style="display:none;">
+            <h2>Ayuda</h2>
+            <p>Bienvenido a NopainApp. Aquí encontrarás información sobre cómo usar la aplicación:</p>
+            <ul>
+                <li>En la página de inicio, selecciona tus preferencias para la rutina.</li>
+                <li>Haz clic en "Generar Rutina" para crear una rutina personalizada.</li>
+                <li>En la sección de Rutina, verás los detalles de tu rutina y podrás iniciar el cronómetro.</li>
+                <li>Sigue las instrucciones de cada ejercicio y utiliza el cronómetro para medir tu tiempo.</li>
+                <li>Al finalizar, no olvides darnos tu opinión para mejorar la aplicación.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
